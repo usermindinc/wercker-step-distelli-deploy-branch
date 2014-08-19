@@ -3,8 +3,8 @@ rm -f ~/.bash_logout
 R_ID=""
 if [ "$WERCKER_GIT_BRANCH" == "master" ]; then 
   
-  echo -e "Running:$WERCKER_CACHE_DIR/DistelliCLI/bin/distelli list releases -n $DISTELLI_APP -f csv | grep $WERCKER_GIT_COMMIT | tail -n 1 | cut -d',' -f2)"
-  R_ID=`$WERCKER_CACHE_DIR/DistelliCLI/bin/distelli list releases -n $DISTELLI_APP -f csv | grep $WERCKER_GIT_COMMIT | tail -n 1 | cut -d',' -f2)`
+  echo -e "Running:$WERCKER_CACHE_DIR/DistelliCLI/bin/distelli list releases -n $DISTELLI_APP -f csv | grep $WERCKER_GIT_COMMIT | tail -n 1 | cut -d',' -f2"
+  R_ID=`$WERCKER_CACHE_DIR/DistelliCLI/bin/distelli list releases -n $DISTELLI_APP -f csv | grep $WERCKER_GIT_COMMIT | tail -n 1 | cut -d',' -f2`
   echo -e "Release ID: $R_ID"
   if [ -n "$R_ID" ] 
   then 
