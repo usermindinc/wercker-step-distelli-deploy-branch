@@ -2,5 +2,22 @@ name: distelli-deploy-branch
 version: 1.0.11
 description: |
   Deploys via distelli if the current branch is the specified branch
+keywords:
+  - deploy
+  - distelli
+properties:
+  branch:
+    type: string
+    required: false
+  distelli_app:
+    type: string
+    required: false
+  distelli_env:
+    type: string
+    required: false
+  release_id:
+    type: string
+    required: false
+
 
 
