@@ -1,5 +1,4 @@
 set -v
-rm -f ~/.bash_logout
 
 R_ID="$WERCKER_DISTELLI_DEPLOY_BRANCH_RELEASE_ID"
 DEPLOY_BRANCH="master"
@@ -27,9 +26,7 @@ if [ "$WERCKER_GIT_BRANCH" == "$DEPLOY_BRANCH" ]; then
   then 
     $WERCKER_CACHE_DIR/DistelliCLI/bin/distelli deploy -q -y -r $R_ID -m "Wercker deploy of $DISTELLI_APP to $DISTELLI_ENV" -e $DISTELLI_ENV
   else 
-    echo "No release found for $DISTELLI_ENV at $WERCKER_GIT_BRANCH"
+    echo "No release found for $DISTELLI_ENV/$DISTELLI_APP at $WERCKER_GIT_BRANCH"
     exit 1
   fi
 fi
-
-exit 0
