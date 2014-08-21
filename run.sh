@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -v
 
 R_ID="$WERCKER_DISTELLI_DEPLOY_BRANCH_RELEASE_ID"
