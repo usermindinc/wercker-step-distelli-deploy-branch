@@ -17,9 +17,10 @@ fi
 
 if [ "$WERCKER_GIT_BRANCH" == "$DEPLOY_BRANCH" ]; then
   echo -e "Running:$WERCKER_CACHE_DIR/DistelliCLI/bin/distelli list releases -n $DISTELLI_APP -f csv | grep $WERCKER_GIT_COMMIT | tail -n 1 | cut -d',' -f2"
-  $WERCKER_CACHE_DIR/DistelliCLI/bin/distelli list releases -n $DISTELLI_APP -f csv | grep $WERCKER_GIT_COMMIT | tail -n 1 | cut -d',' -f2
+  echo $WERCKER_CACHE_DIR/DistelliCLI/bin/distelli list releases -n $DISTELLI_APP -f csv | grep $WERCKER_GIT_COMMIT | tail -n 1 | cut -d',' -f2
   if [ ! -n "$R_ID" ]; then 
-    R_ID=`$WERCKER_CACHE_DIR/DistelliCLI/bin/distelli list releases -n $DISTELLI_APP -f csv | grep $WERCKER_GIT_COMMIT | tail -n 1 | cut -d',' -f2`
+    echo foo
+    # R_ID=`$WERCKER_CACHE_DIR/DistelliCLI/bin/distelli list releases -n $DISTELLI_APP -f csv | grep $WERCKER_GIT_COMMIT | tail -n 1 | cut -d',' -f2`
   fi
   echo -e "Release ID: $R_ID"
   if [ -n "$R_ID" ] 
