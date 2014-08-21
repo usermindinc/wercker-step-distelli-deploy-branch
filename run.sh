@@ -24,7 +24,7 @@ if [ "$WERCKER_GIT_BRANCH" == "$DEPLOY_BRANCH" ]; then
   echo -e "Release ID: $R_ID"
   if [ -n "$R_ID" ] 
   then 
-    #$WERCKER_CACHE_DIR/DistelliCLI/bin/distelli deploy -q -y -r $R_ID -m "Wercker deploy of $DISTELLI_APP to $DISTELLI_ENV" -e $DISTELLI_ENV
+    echo $WERCKER_CACHE_DIR/DistelliCLI/bin/distelli deploy -q -y -r $R_ID -m "Wercker deploy of $DISTELLI_APP to $DISTELLI_ENV" -e $DISTELLI_ENV
   else 
     echo "No release found for $DISTELLI_ENV/$DISTELLI_APP at $WERCKER_GIT_BRANCH"
   fi
